@@ -19,4 +19,13 @@ function playRound(playerSelection, computerSelection) {
   else return `You've won! ${playerSelection} beats ${computerSelection}`;
 }
 
-playRound('ScIsSors', getComputerChoice());
+function game() {
+  for (let i = 0; i <= 5; i++) {
+    let US = prompt(
+      'Please write one of the 3 options: Rock!, Paper!, Scissors!'
+    );
+    console.log(playRound(US, getComputerChoice()));
+  }
+}
+
+game();
