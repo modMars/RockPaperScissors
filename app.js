@@ -1,9 +1,22 @@
 function getComputerChoice() {
   let cpuChoice;
   let cpuRand = Math.floor(Math.random() * (4 - 1) + 1);
-  if (cpuRand === 3) cpuChoice = 'Scissors!';
-  else if (cpuRand === 2) cpuChoice = 'Rock!';
-  else if (cpuRand === 1) cpuChoice = 'Paper!';
+  if (cpuRand === 3) cpuChoice = 'scissors';
+  else if (cpuRand === 2) cpuChoice = 'rock';
+  else if (cpuRand === 1) cpuChoice = 'paper';
   return cpuChoice;
 }
-console.log(getComputerChoice());
+
+function playRound(playerSelection, computerSelection) {
+  playerSelection = playerSelection.toLowerCase();
+  if (playerSelection === 'rock' && computerSelection === 'paper')
+    return 'You lose! paper beats rock!';
+  else if (playerSelection === 'scissors' && computerSelection === 'rock')
+    return 'You lose! rock beats scissors!';
+  else if (playerSelection === 'paper' && computerSelection === 'scissors')
+    return 'You lose! scissors beats paper!';
+  else if (playerSelection === computerSelection) return "It's a tie!";
+  else return `You've won! ${playerSelection} beats ${computerSelection}`;
+}
+
+playRound('ScIsSors', getComputerChoice());
