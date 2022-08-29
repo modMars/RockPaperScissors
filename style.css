@@ -1,0 +1,38 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 5%, rgba(81,9,121,1) 37%, rgba(7,53,150,1) 61%, rgba(6,78,166,1) 98%, rgba(4,125,197,1) 100%, rgba(0,212,255,1) 100%); 
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 50rem;
+}
+
+.container h1 {
+    font-size: 5rem;
+    color: white;
+    flex-basis: 100%;
+    text-align: center;
+}
+
+.container button{
+    min-width: 200px;
+    min-height: 200px;
+    margin: 20px 50px;
+}

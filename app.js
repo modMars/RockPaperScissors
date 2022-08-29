@@ -1,4 +1,4 @@
-function getComputerChoice() {
+  function getComputerChoice() {
   let cpuChoice;
   let cpuRand = Math.floor(Math.random() * (4 - 1) + 1);
   if (cpuRand === 3) cpuChoice = 'scissors';
@@ -19,13 +19,27 @@ function playRound(playerSelection, computerSelection) {
   else return `You've won! ${playerSelection} beats ${computerSelection}`;
 }
 
-function game() {
-  for (let i = 0; i <= 5; i++) {
-    let US = prompt(
-      'Please write one of the 3 options: Rock!, Paper!, Scissors!'
-    );
-    console.log(playRound(US, getComputerChoice()));
-  }
-}
+// function game() {
+//   for (let i = 0; i <= 5; i++) {
+//     let US = prompt(
+//       'Please write one of the 3 options: Rock!, Paper!, Scissors!'
+//     );
+//     console.log(playRound(US, getComputerChoice()));
+//   }
+// }
 
-game();
+const btnRock = document.querySelector('.rck');
+const btnPaper = document.querySelector('.ppr');
+const btnScissors = document.querySelector('.scs');
+
+btnRock.addEventListener('click', () => {
+  console.log(playRound('rock', getComputerChoice()))}
+)
+btnPaper.addEventListener('click', () => {
+  console.log(playRound('paper', getComputerChoice()))}
+  )
+
+btnScissors.addEventListener('click', () => {
+  console.log(playRound('scissors', getComputerChoice()))
+}
+)
