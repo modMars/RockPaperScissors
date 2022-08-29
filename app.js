@@ -1,5 +1,13 @@
-  let cpuCounter = 0;
-  let playerCounter = 0;;
+let cpuCounter = 0;
+let playerCounter = 0;
+const btnRock = document.querySelector('.rck');
+const btnPaper = document.querySelector('.ppr');
+const btnScissors = document.querySelector('.scs');
+const container = document.querySelector('.container');
+const score = document.createElement('div');
+const h1 = document.getElementById('h1');
+const player = document.getElementById('player')
+const cpu = document.getElementById('cpu')
 
   function getComputerChoice() {
   let cpuChoice;
@@ -15,57 +23,53 @@ function playRound(playerSelection, computerSelection) {
   if (playerSelection === 'rock' && computerSelection === 'paper')
   {
     cpuCounter++;
+    cpu.textContent = `CPU: ${cpuCounter}`
+    if(cpuCounter === 5)
+    return h1.textContent = "The machine won! better luck next time";
     return 'You lose! paper beats rock!';
   }
   else if (playerSelection === 'scissors' && computerSelection === 'rock')
   {
     cpuCounter++;
+    cpu.textContent = `CPU: ${cpuCounter}`
+    if(cpuCounter === 5)
+    return h1.textContent = "The machine won the set! better luck next time";
     return 'You lose! rock beats scissors!';
   }
   else if (playerSelection === 'paper' && computerSelection === 'scissors')
   {
     cpuCounter++;
+    cpu.textContent = `CPU: ${cpuCounter}`
+    if(cpuCounter === 5)
+      return h1.textContent = "The machine won! better luck next time";
+
     return 'You lose! scissors beats paper!';
   }
-  else if (playerSelection === computerSelection) return "It's a tie!";
+  else if (playerSelection === computerSelection) return `It's a tie! ${playerSelection} vs ${computerSelection}`;
   else 
   {
     playerCounter++;
+    player.textContent = `Player: ${playerCounter}`
+    if(playerCounter === 5)
+    return h1.textContent = "You've won the set!";
     return `You've won! ${playerSelection} beats ${computerSelection}`;
   }
 }
 
-// function game() {
-//   for (let i = 0; i <= 5; i++) {
-//     let US = prompt(
-//       'Please write one of the 3 options: Rock!, Paper!, Scissors!'
-//     );
-//     console.log(playRound(US, getComputerChoice()));
-//   }
-// }
-
-const btnRock = document.querySelector('.rck');
-const btnPaper = document.querySelector('.ppr');
-const btnScissors = document.querySelector('.scs');
-const container = document.querySelector('.container');
-const score = document.createElement('div');
-
 btnRock.addEventListener('click', () => {
   score.textContent = (playRound('rock', getComputerChoice()))
-  console.log(score.textContent)
-  console.log(playerCounter, cpuCounter)
-  container.append(score.textContent);
-  setTimeout(score.textContent = "", 1000)
-  container.append(score.textContent)
-}
-  
+  h1.textContent = score.textContent;
+  }
 )
+
 btnPaper.addEventListener('click', () => {
-  console.log(playRound('paper', getComputerChoice()))}
-  )
+  score.textContent = (playRound('paper', getComputerChoice()))
+  h1.textContent = score.textContent;
+  }
+)
 
 btnScissors.addEventListener('click', () => {
-  console.log(playRound('scissors', getComputerChoice()))
-}
+  score.textContent = (playRound('scissors', getComputerChoice()))
+  h1.textContent = score.textContent;
+  }
 )
-
