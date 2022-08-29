@@ -25,7 +25,11 @@ function playRound(playerSelection, computerSelection) {
     cpuCounter++;
     cpu.textContent = `CPU: ${cpuCounter}`
     if(cpuCounter === 5)
-    return h1.textContent = "The machine won! better luck next time";
+    {
+    cpuCounter = 0;
+    playerCounter = 0;
+    return h1.textContent = "The machine won the set! better luck next time";
+    }
     return 'You lose! paper beats rock!';
   }
   else if (playerSelection === 'scissors' && computerSelection === 'rock')
@@ -33,7 +37,11 @@ function playRound(playerSelection, computerSelection) {
     cpuCounter++;
     cpu.textContent = `CPU: ${cpuCounter}`
     if(cpuCounter === 5)
+    {
+    cpuCounter = 0;
+    playerCounter = 0;
     return h1.textContent = "The machine won the set! better luck next time";
+    }
     return 'You lose! rock beats scissors!';
   }
   else if (playerSelection === 'paper' && computerSelection === 'scissors')
@@ -41,11 +49,17 @@ function playRound(playerSelection, computerSelection) {
     cpuCounter++;
     cpu.textContent = `CPU: ${cpuCounter}`
     if(cpuCounter === 5)
-      return h1.textContent = "The machine won! better luck next time";
-
+    {
+    cpuCounter = 0;
+    playerCounter = 0;
+    return h1.textContent = "The machine won the set! better luck next time";
+    }
     return 'You lose! scissors beats paper!';
   }
-  else if (playerSelection === computerSelection) return `It's a tie! ${playerSelection} vs ${computerSelection}`;
+  else if (playerSelection === computerSelection)
+  {
+     return `It's a tie! ${playerSelection} vs ${computerSelection}`;
+  }
   else 
   {
     playerCounter++;

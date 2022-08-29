@@ -5,7 +5,7 @@
 html {
     font-size: 62.5%;
     background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,1) 5%, rgba(81,9,121,1) 37%, rgba(7,53,150,1) 61%, rgba(6,78,166,1) 98%, rgba(4,125,197,1) 100%, rgba(0,212,255,1) 100%); 
+    background: linear-gradient(173deg, rgba(2,0,36,1) 0%, rgba(81,9,121,1) 53%, rgba(7,53,150,1) 86%, rgba(6,78,166,1) 98%, rgba(4,125,197,1) 100%); 
 }
 
 body {
@@ -14,7 +14,7 @@ body {
     height: 100vh;
     display: flex;
     justify-content: center;
-    /* align-items: center; */
+    align-items: center;
 }
 .container{
     display:flex;
@@ -25,25 +25,38 @@ body {
 }
 
 .container h1 {
+    position: absolute;
+    top: 5%;
     font-size: 9rem;
     color: white;
     flex-basis: 100%;
     text-align: center;
 }
 
-.container button{
-    min-width: 400px;
-    min-height: 400px;
-    margin: 20px 50px;
-    display: inline-block;
-}
-
 .container div{
     display: flex;
     color: white;
-    font-size: 3rem;
-    flex-basis: 100%;
-    text-align: center;
-    justify-content: space-evenly;
-    margin-bottom: 10rem;
+    font-size: 6rem;
+    flex-basis: 80%;
+    justify-content: space-between;
+    margin: 0 0 100px 0
+}
+
+.container button{
+    min-width: 300px;
+    min-height: 300px;
+    box-shadow: -8px 8px 8px 0px rgba(0,0,0,0.68);
+    display: inline-block;
+    color: black;
+    font-size: 4rem;
+    border-radius: 20px;
+
+}
+
+#player {
+    color: green;
+}
+
+#cpu {
+    color: red;
 }
