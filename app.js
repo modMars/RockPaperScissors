@@ -24,7 +24,7 @@ function playRound(playerSelection, computerSelection) {
   {
     cpuCounter++;
     cpu.textContent = `CPU: ${cpuCounter}`
-    if(cpuCounter === 5)
+    if(cpuCounter >= 5)
     {
     cpuCounter = 0;
     playerCounter = 0;
@@ -36,7 +36,7 @@ function playRound(playerSelection, computerSelection) {
   {
     cpuCounter++;
     cpu.textContent = `CPU: ${cpuCounter}`
-    if(cpuCounter === 5)
+    if(cpuCounter >= 5)
     {
     cpuCounter = 0;
     playerCounter = 0;
@@ -48,7 +48,7 @@ function playRound(playerSelection, computerSelection) {
   {
     cpuCounter++;
     cpu.textContent = `CPU: ${cpuCounter}`
-    if(cpuCounter === 5)
+    if(cpuCounter >= 5)
     {
     cpuCounter = 0;
     playerCounter = 0;
@@ -64,8 +64,12 @@ function playRound(playerSelection, computerSelection) {
   {
     playerCounter++;
     player.textContent = `Player: ${playerCounter}`
-    if(playerCounter === 5)
-    return h1.textContent = "You've won the set!";
+    if(playerCounter >= 5)
+    {
+      cpuCounter = 0;
+      playerCounter = 0;
+      return h1.textContent = "You've won the set!";
+    }
     return `You've won! ${playerSelection} beats ${computerSelection}`;
   }
 }
